@@ -59,15 +59,15 @@ Contents
 
 Files:
 
-	CMakeLists.txt	CMake is the build system used for Yet. This is the root
-					config file.
-	LICENSE.md		A Markdown version of Pixar's modified Apache 2.0 license.
-	NOTICE.md		The NOTICE file required by the Apache License.
+	CMakeLists.txt  CMake is the build system used for Yet. This is the root
+	                config file.
+	LICENSE.md      A Markdown version of Pixar's modified Apache 2.0 license.
+	NOTICE.md       The NOTICE file required by the Apache License.
 
 Folders:
 
-	docs		Contains all of the documentation for Yet (currently empty).
-	include		Contains all of the public header files for Yet.
-	src			All of Yet's source code.
-	tests		Tests for Yet.
+	docs        Contains all of the documentation for Yet (currently empty).
+	include     Contains all of the public header files for Yet.
+	src         All of Yet's source code.
+	tests       Tests for Yet.
 
