@@ -37,6 +37,11 @@
 
 #include <time.h>
 
+/* For C++ compatibility */
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef struct timespec TimeSpec;
 
 TimeSpec yet_ts_diff(TimeSpec start, TimeSpec end);
@@ -47,3 +52,6 @@ float yet_ts_float(TimeSpec ts);
 TimeSpec yet_timer_start();
 TimeSpec yet_timer_stop(TimeSpec start);
 
+#ifdef __cplusplus
+}
+#endif
