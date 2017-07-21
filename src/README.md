@@ -1,10 +1,8 @@
-Source Code
-===========
+# Source Code
 
 Contains all of the source code for Wima.
 
-Contents
---------
+## Contents
 
 Files:
 

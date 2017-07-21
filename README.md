@@ -1,5 +1,4 @@
-Yet
-=====
+# Yet
 
 Yet is a timing library
 
@@ -11,18 +10,15 @@ Yet is Free and Open Source Software (FOSS). It is licensed under a modified
 used by [Pixar Animation Studios](https://www.pixar.com/) for use on the
 [OpenSubdiv](http://graphics.pixar.com/opensubdiv/docs/intro.html) project.
 
-Status
-------
+## Status
 
 Yet is not even in Alpha stage yet. This software is nowhere near ready for use.
 
-Language
---------
+## Language
 
 Yet is written in ANSI C.
 
-Git Workflow
-------------
+## Git Workflow
 
 Yet uses the git workflow described in
 [this post](http://endoflineblog.com/oneflow-a-git-branching-model-and-workflow).
@@ -37,25 +33,21 @@ get the latest release.)
 Yet includes scripts and a `.gitconfig` that helps manage the workflow. New
 contributors should familiarize themselves with them.
 
-Commit Messages
----------------
+## Commit Messages
 
 Projects under Project LFyre, including Yet, use the commit message guidelines
 laid out in [this blog post](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html).
 
-Semantic Versioning
--------------------
+## Semantic Versioning
 
 Yet uses [semantic versioning](http://semver.org/).
 
-Contents Listing
-----------------
+## Contents Listing
 
 Every folder contains a README file which lists the purposes for the files and
 folders in that directory.
 
-Contents
---------
+## Contents
 
 Files:
 
