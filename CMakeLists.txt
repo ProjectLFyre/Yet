@@ -31,6 +31,8 @@ project(yet C)
 # Necessary to suppress a useless warning with QtCreator.
 set(ignoreMe "${QT_QMAKE_EXECUTABLE}")
 
+add_subdirectory(cmake)
+
 set("YET_INCLUDE_DIR" "include")
 set("YET_SRC_DIR" "src")
 

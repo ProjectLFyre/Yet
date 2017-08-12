@@ -30,17 +30,4 @@ set("YET_SRC"
 	"yet.c"
 )
 
-# Do the shared library on platforms other than Windows.
-if(NOT WIN32)
-	set(YET_SHARED_LIB "${PROJECT_NAME}_shared")
-	add_library("${YET_SHARED_LIB}" SHARED "${YET_SRC}")
-	set_target_properties("${YET_SHARED_LIB}" PROPERTIES OUTPUT_NAME "${PROJECT_NAME}")
-	install(TARGETS "${YET_SHARED_LIB}" LIBRARY DESTINATION lib/${PROJECT_NAME})
-endif()
-
-# Static library.
-set(YET_STATIC_LIB "${PROJECT_NAME}_static")
-add_library("${YET_STATIC_LIB}" STATIC "${YET_SRC}")
-set_target_properties("${YET_STATIC_LIB}" PROPERTIES OUTPUT_NAME "${PROJECT_NAME}")
-install(TARGETS "${YET_STATIC_LIB}" ARCHIVE DESTINATION lib/${PROJECT_NAME})
-
+create_library("${PROJECT_NAME}" "${YET_SRC}" "YES")
