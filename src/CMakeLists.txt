@@ -30,8 +30,4 @@ set("YET_SRC"
 	"yet.c"
 )
 
-set(YET_SHARED "${PROJECT_NAME}_shared")
-set(YET_STATIC "${PROJECT_NAME}_static")
-set(YET_PIC "${PROJECT_NAME}_pic")
-
-create_all_libraries("${YET_SHARED}" "${YET_STATIC}" "${YET_PIC}" "${PROJECT_NAME}" "${YET_SRC}" "YES")
+create_pic_library("${PROJECT_NAME}" "${PROJECT_NAME}" "${YET_SRC}" YES)
