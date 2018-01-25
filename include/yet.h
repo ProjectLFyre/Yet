@@ -48,6 +48,7 @@ TimeSpec yet_ts_diff(TimeSpec start, TimeSpec end);
 TimeSpec yet_ts_add(TimeSpec ts1, TimeSpec ts2);
 
 float yet_ts_float(TimeSpec ts);
+double yet_ts_double(TimeSpec ts);
 
 TimeSpec yet_timer_start();
 TimeSpec yet_timer_stop(TimeSpec start);

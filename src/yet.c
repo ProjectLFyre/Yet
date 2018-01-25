@@ -77,6 +77,10 @@ float yet_ts_float(TimeSpec ts) {
 	return (float) ts.tv_sec + (float) ts.tv_nsec * 1E-9;
 }
 
+double yet_ts_double(TimeSpec ts) {
+	return (double) ts.tv_sec + (double) ts.tv_nsec * 1E-9;
+}
+
 TimeSpec yet_timer_start() {
 
 	TimeSpec start;
