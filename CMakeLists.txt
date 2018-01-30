@@ -31,6 +31,80 @@ project(yet C)
 # Necessary to suppress a useless warning with QtCreator.
 set(ignoreMe "${QT_QMAKE_EXECUTABLE}")
 
+if(NOT "${CMAKE_C_COMPILER_ID}" MATCHES "Clang")
+	message(FATAL_ERROR "Clang is the only compiler supported on Linux")
+endif()
+
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra")
+
+# If we are in debug mode...
+if("${CMAKE_BUILD_TYPE}" MATCHES "Debug" OR "${CMAKE_BUILD_TYPE}" MATCHES "RelWithDegInfo")
+
+	# Create the sanitizer options.
+	option(YET_SANITIZER_ADDRESS "Build with AddressSanitizer" ON)
+
+	# If the memory sanitizer is in use, set the flag.
+	if ("${YET_SANITIZER_ADDRESS}")
+		string(CONCAT YET_SANITIZER_FLAGS " -fsanitize=address")
+	endif()
+
+	# Option to run the undefined behavior sanitizer.
+	option(YET_SANITIZER_UNDEFINED "Build with UndefinedBehaviorSanitizer" ON)
+
+	# If we want to run the undefined behavior sanitizer...
+	if(YET_SANITIZER_UNDEFINED)
+		string(CONCAT YET_SANITIZER_FLAGS " -fsanitize=undefined")
+	endif()
+
+endif()
+
+# If we are using sanitizers...
+if(DEFINED YET_SANITIZER_FLAGS)
+
+	# We must use Clang as the linker.
+	set(CMAKE_LINKER "${CMAKE_C_COMPILER}")
+
+	# We must use -O1.
+	set(CMAKE_C_FLAGS_RELWITHDEBINFO "-O1 -g -DNDEBUG")
+
+	# These are all options to make the print outs prettier.
+	string(CONCAT YET_FLAGS "${CMAKE_C_FLAGS_RELWITHDEBINFO} ${YET_SANITIZER_FLAGS} "
+		"-fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-common")
+
+	# We need to set compiler *and* linker flags.
+	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${YET_FLAGS}")
+	set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${YET_FLAGS}")
+
+	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fno-sanitize-recover=all")
+endif()
+
+# If we are in release mode...
+if("${CMAKE_BUILD_TYPE}" MATCHES "Release")
+
+	# Add link time optimization.
+	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -flto")
+
+	# Have an option to harden Dyna.
+	option(YET_HARDEN "Build with hardened security" OFF)
+
+	# If we are hardened, add Control Flow Integrity.
+	# We would like to add Safe Stack, but it seg faults
+	# with jemalloc right now.
+	if("${YET_HARDEN}")
+
+		# Set a bunch of initial flags.
+		#set(YET_FLAGS "-fsanitize=cfi -fvisibility=hidden -fsanitize=safe-stack")
+		set(YET_FLAGS "-fsanitize=cfi -fvisibility=hidden")
+
+		# We need to set compiler flags.
+		set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${YET_FLAGS}")
+
+	endif()
+
+endif()
+
+enable_testing()
+
 add_subdirectory(cmake)
 
 set("YET_INCLUDE_DIR" "include")

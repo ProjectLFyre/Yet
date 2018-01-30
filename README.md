@@ -16,7 +16,7 @@ Yet is not even in Alpha stage yet. This software is nowhere near ready for use.
 
 ## Language
 
-Yet is written in ANSI C.
+Yet is written in pure ISO C11.
 
 ## Git Workflow
 
