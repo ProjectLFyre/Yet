@@ -20,8 +20,8 @@ Yet is written in pure ISO C11.
 
 ## Git Workflow
 
-Yet uses the git workflow described in
-[this post](http://endoflineblog.com/oneflow-a-git-branching-model-and-workflow).
+Yet uses the git workflow described
+[here](http://endoflineblog.com/oneflow-a-git-branching-model-and-workflow).
 Developers who want to contribute to Wima are encouraged to read that post
 carefully.
 
