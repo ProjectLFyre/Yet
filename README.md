@@ -10,6 +10,27 @@ Yet is Free and Open Source Software (FOSS). It is licensed under a modified
 used by [Pixar Animation Studios](https://www.pixar.com/) for use on the
 [OpenSubdiv](http://graphics.pixar.com/opensubdiv/docs/intro.html) project.
 
+## Getting Started
+
+To get started, clone the repo, and then run the following two commands in the
+root directory:
+
+```
+git submodule update --init --recursive
+scripts/setup.sh
+```
+
+## Dependencies
+
+Yet depends on CMake. On Ubuntu, it can be installed with the following
+command:
+
+```
+sudo apt install cmake cmake-curses-gui
+```
+
+It also depends on [Yc](https://github.com/YzenaTech/Yc).
+
 ## Status
 
 Yet is not even in Alpha stage yet. This software is nowhere near ready for use.
