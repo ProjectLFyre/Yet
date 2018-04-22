@@ -36,7 +36,7 @@
  */
 
 #include <time.h>
-#include <yet.h>
+#include <yet/yet.h>
 
 // This function was conveniently lifted from
 // https://www.guyrutenberg.com/2007/09/22/profiling-code-using-clock_gettime/
