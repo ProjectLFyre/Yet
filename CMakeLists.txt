@@ -107,6 +107,8 @@ enable_testing()
 
 add_subdirectory(cmake)
 
+add_subdirectory(docs)
+
 set("YET_INCLUDE_DIR" "include")
 set("YET_SRC_DIR" "src")
 
