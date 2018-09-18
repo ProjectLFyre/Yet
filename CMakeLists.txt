@@ -30,17 +30,15 @@ project(yet C)
 
 # Necessary to suppress a useless warning with QtCreator.
 set(ignoreMe "${QT_QMAKE_EXECUTABLE}")
-
-if(NOT "${CMAKE_C_COMPILER_ID}" MATCHES "Clang")
-	message(FATAL_ERROR "Clang is the only supported compiler")
-endif()
+set(ignoreMe "${CMAKE_CXX_COMPILER}")
 
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall")
 
 message(STATUS "${CMAKE_BUILD_TYPE}")
 
 # If we are in debug mode...
-if("${CMAKE_BUILD_TYPE}" MATCHES "Debug" OR "${CMAKE_BUILD_TYPE}" MATCHES "RelWithDegInfo")
+if(("${CMAKE_BUILD_TYPE}" MATCHES "Debug" OR "${CMAKE_BUILD_TYPE}" MATCHES "RelWithDegInfo")
+		AND "${CMAKE_C_COMPILER_ID}" MATCHES "Clang")
 
 	# Create the sanitizer options.
 	option(YET_SANITIZER_ADDRESS "Build with AddressSanitizer" ON)
