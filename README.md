@@ -1,14 +1,12 @@
 # Yet
 
-Yet is a timing library
+Yet is a timing library written in C.
 
-Yet is developed by [Yzena](http://yzena.com/).
+Yet is developed by [Yzena][1].
 
 Yet is Free and Open Source Software (FOSS). It is licensed under a modified
-[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0.html). The
-[modification](http://graphics.pixar.com/opensubdiv/docs/license.html) was first
-used by [Pixar Animation Studios](https://www.pixar.com/) for use on the
-[OpenSubdiv](http://graphics.pixar.com/opensubdiv/docs/intro.html) project.
+[Apache License 2.0][2]. The [modification][3] was first used by
+[Pixar Animation Studios][4] for use on the [OpenSubdiv][5] project.
 
 ## Getting Started
 
@@ -29,7 +27,7 @@ command:
 sudo apt install cmake cmake-curses-gui
 ```
 
-It also depends on [Yc](https://github.com/YzenaTech/Yc).
+It also depends on [Yc][6].
 
 ## Status
 
@@ -41,10 +39,8 @@ Yet is written in pure ISO C11.
 
 ## Git Workflow
 
-Yet uses the git workflow described
-[here](http://endoflineblog.com/oneflow-a-git-branching-model-and-workflow).
-Developers who want to contribute to Wima are encouraged to read that post
-carefully.
+Yet uses the git workflow described [here][7]. Developers who want to contribute
+to Yet are encouraged to read that post carefully.
 
 For feature branches, it uses `rebase + merge --no-ff` (option 3). It also uses
 a `develop`/`master` split. (Main development is on `develop`, and `master` just
@@ -54,11 +50,11 @@ release.)
 ## Commit Messages
 
 Projects under Yzena, including Yet, use the commit message guidelines laid out
-in [this blog post](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html).
+in [this blog post][8].
 
 ## Semantic Versioning
 
-Yet uses [semantic versioning](http://semver.org/).
+Yet uses [semantic versioning][9].
 
 ## Contents Listing
 
@@ -80,4 +76,14 @@ Folders:
 	include     Contains all of the public header files for Yet.
 	src         All of Yet's source code.
 	tests       Tests for Yet.
+
+[1]: http://yzena.com/
+[2]: https://www.apache.org/licenses/LICENSE-2.0.html
+[3]: http://graphics.pixar.com/opensubdiv/docs/license.html
+[4]: https://www.pixar.com/
+[5]: http://graphics.pixar.com/opensubdiv/docs/intro.html
+[6]: https://github.com/YzenaTech/Yc
+[7]: http://endoflineblog.com/oneflow-a-git-branching-model-and-workflow
+[8]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
+[9]: http://semver.org/
 
