@@ -1,5 +1,8 @@
 # Yet
 
+***WARNING: This project has moved to [https://git.yzena.com/][10] for [these
+reasons][11].***
+
 Yet is a timing library written in C.
 
 Yet is developed by [Yzena][1].
@@ -86,4 +89,5 @@ Folders:
 [7]: http://endoflineblog.com/oneflow-a-git-branching-model-and-workflow
 [8]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
 [9]: http://semver.org/
-
+[10]: https://git.yzena.com/Yzena/Yet
+[11]: https://gavinhoward.com/2020/04/i-am-moving-away-from-github/
